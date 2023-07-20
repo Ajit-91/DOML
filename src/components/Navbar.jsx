@@ -1,61 +1,67 @@
 import React, { useState } from 'react';
 import logo from "../assets/logo.png"
 import Button from './Button';
+import routes from '../routes';
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(prev => !prev);
     };
+
+    const rightMenu = () => {
+        return (
+            <>
+                <input
+                    type="text"
+                    placeholder='Search DOML'
+                    className='bg-[#272F43] rounded-md px-5 py-2 text-sm text-gray-300 outline-0'
+                />
+                <Button px={3}>Sign In</Button>
+                <Button
+                    px={3}
+                    rounded='md'
+                    outline
+                >Sign Up
+                </Button>
+            </>
+        )
+    }
+
+    const renderRoutes = () => {
+        return routes.map((route, index) => (
+            <Link
+                key={index}
+                to={route.path}
+                className={`text-gray-300 hover:bg-[#272F43] px-2 py-2 rounded-md block}`}
+            > {route.name}
+            </Link>
+        ))
+    }
 
     return (
         <nav className="bg-transparent mb-7">
-            <div className="flex items-center h-16">
-                <div className="h-1/2 flex items-center">
-                    {/* <div className="flex-shrink-0 text-white font-bold text-xl">Your Logo</div> */}
+            <div className="flex items-center justify-between lg:justify-left h-16">
+
+                <div className="h-6 w-auto flex items-center">
                     <img src={logo} alt="logo" className='h-full' />
                 </div>
-                <div className="hidden w-full ml-4 md:block">
+                <div className="hidden w-full ml-4 lg:block">
                     <div className='flex justify-between items-center'>
-                        {/* links */}
-                        <div className="flex items-center space-x-2">
-                            <a href="#home" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Product
-                            </a>
-                            <a href="#about" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Team
-                            </a>
-                            <a href="#services" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Enterprise
-                            </a>
-                            <a href="#contact" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Explore
-                            </a>
-                            <a href="#contact" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Marketplace
-                            </a>
-                            <a href="#contact" className="text-gray-300 hover:bg-[#272F43] px-3 py-2 rounded-md">
-                                Pricing
-                            </a>
-                        </div>
+                        {/* routes */}
+                        <div className="flex items-center space-x-1">
+                            {renderRoutes()}
+                         </div>
                         {/*  */}
                         <div className='flex items-center space-x-1'>
-                            <input 
-                                type="text" 
-                                placeholder='Search DOML' 
-                                className='bg-[#272F43] rounded-md px-5 py-2 text-sm text-gray-300' 
-                            />
-                            <Button px={3}>Sign In</Button>
-                            <Button 
-                                px={3}
-                                rounded='md'
-                                outline
-                            >Sign Up</Button>
+                            {rightMenu()}
                         </div>
                     </div>
                 </div>
 
-                <div className="block md:hidden">
+                <div className="block lg:hidden">
                     <button
                         onClick={toggleMenu}
                         className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
@@ -89,26 +95,13 @@ const Navbar = () => {
 
 
             {isMenuOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="#home" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md">
-                            Home
-                        </a>
-                        <a href="#about" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md">
-                            About
-                        </a>
-                        <a
-                            href="#services"
-                            className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md"
-                        >
-                            Services
-                        </a>
-                        <a
-                            href="#contact"
-                            className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md"
-                        >
-                            Contact
-                        </a>
+                <div className="lg:hidden">
+                    <div className="flex justify-left items-left flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        {/* routes */}
+                        {renderRoutes()}
+                        {/*  */}
+                        {rightMenu()}
+                    
                     </div>
                 </div>
             )}
