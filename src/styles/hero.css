@@ -1,0 +1,12 @@
+.gradient-text{
+    background: var(--gradient);
+    background-clip: text;
+}
+
+.hero-btn{
+    border-image: var(--gradient);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    border-image-slice: 1;
+}
