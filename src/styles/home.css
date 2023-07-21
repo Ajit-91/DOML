@@ -10,3 +10,18 @@
     border-radius: 10px;
     border-image-slice: 1;
 }
+
+
+@keyframes scroll {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+.animate {
+    animation: scroll 15s linear infinite;
+}

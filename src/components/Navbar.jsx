@@ -19,9 +19,9 @@ const Navbar = () => {
                     placeholder='Search DOML'
                     className='bg-[#272F43] rounded-md px-5 py-2 text-sm text-gray-300 outline-0'
                 />
-                <Button px={3}>Sign In</Button>
+                <Button px={2}>Sign In</Button>
                 <Button
-                    px={3}
+                    px={2}
                     rounded='md'
                     outline
                 >Sign Up
@@ -95,7 +95,7 @@ const Navbar = () => {
 
 
             {isMenuOpen && (
-                <div className="lg:hidden">
+                <div className="absolute bg-black w-full lg:hidden">
                     <div className="flex justify-left items-left flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {/* routes */}
                         {renderRoutes()}

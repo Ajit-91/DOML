@@ -1,7 +1,5 @@
 import React from 'react'
 import globe from '../../../assets/globe.png'
-
-import "../../../styles/hero.css"
 import Button from '../../../components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
