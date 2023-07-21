@@ -19,10 +19,10 @@ export default () => {
     }, [])
 
     return (
-        <div className="w-full">
+        <div className="w-full py-7">
 
-            <h1 className='text-2xl font-semibold mb-4 '>Users</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8'>
+            <h1 className='text-2xl font-semibold mb-[90px] text-center '>Users</h1>
+            <div className='grid justify-items-center grid-cols-1 md:justify-items-stretch md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-[150px]'>
                 {users?.map((user, index) => (
                     <UserCard key={index} user={user} />
                 ))}
