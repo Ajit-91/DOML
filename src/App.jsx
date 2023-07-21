@@ -3,9 +3,9 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './pages/home/Home';
 import Navbar from './components/Navbar';
+import Users from './pages/users/Users';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     // <div className="container mx-auto px-7">
@@ -13,6 +13,7 @@ function App() {
       <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/users" element={<Users/>} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
 
