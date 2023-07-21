@@ -31,15 +31,15 @@ const Home = () => {
   const row3 = [Adobe, CreativeCloud, Discord, Figma, Netflix, Paypal, Zoom];
 
   return (
-    <div className="w-full">
-        <Hero />
-        <div className='mt-20 flex items-center flex-col justify-center overflow-hidden '>
-          
+    <div className="w-full py-7">
+      <Hero />
+      <div className='mt-20 flex items-center flex-col justify-center overflow-hidden '>
+
         <LogosCarousel images={row1} />
         <LogosCarousel images={row2} />
         <LogosCarousel images={row3} />
 
-        </div>
+      </div>
     </div>
   )
 }

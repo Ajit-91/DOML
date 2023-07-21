@@ -6,11 +6,11 @@ import Button from '../../../components/Button';
 const UserCard = ({ user }) => {
 
     return (
-        <div className="bg-[#0b0b0b] border-[1px] mt-8 border-[#272F43] relative  rounded-md px-3 py-3">
+        <div className="bg-[#0b0b0b] w-full sm:w-2/3 md:w-full border-[1px] mt-8 border-[#272F43] relative  rounded-md px-3 py-3">
             {/* Image Section */}
-            <div className='mb-[130px] relative'>
-                <div className='bg-[#0b0b0b] border-[1px] border-[#272F43] p-2 w-3/5 rounded-full absolute left-1/2  -translate-x-2/4 -translate-y-2/4'>
-                    <div className='w-full rounded-full gradient p-[1px]'>
+            <div className='mb-32 relative'>
+                <div className='bg-[#0b0b0b] border-[1px] border-[#272F43] p-2 max-w-[230px] w-3/5 rounded-full absolute left-1/2  -translate-x-2/4 -translate-y-2/4'>
+                    <div className='w-full rounded-full gradient p-[3px]'>
                         <img className="w-full bg-[#0b0b0b] rounded-full object-cover" src={user.image} alt={user.firstName} />
                     </div>
                 </div>

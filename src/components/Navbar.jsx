@@ -45,15 +45,18 @@ const Navbar = () => {
         <nav className="bg-transparent mb-7 relative">
             <div className="flex items-center justify-between lg:justify-left h-16">
 
-                <div className="h-6 w-auto flex items-center">
-                    <img src={logo} alt="logo" className='h-full' />
-                </div>
+                <Link to='/'>
+                    <div className="h-6 w-auto flex items-center">
+                        <img src={logo} alt="logo" className='h-full' />
+                    </div>
+                </Link>
+                
                 <div className="hidden w-full ml-4 lg:block">
                     <div className='flex justify-between items-center'>
                         {/* routes */}
                         <div className="flex items-center space-x-1">
                             {renderRoutes()}
-                         </div>
+                        </div>
                         {/*  */}
                         <div className='flex items-center space-x-1'>
                             {rightMenu()}
@@ -95,13 +98,13 @@ const Navbar = () => {
 
 
             {isMenuOpen && (
-                <div className="absolute bg-black w-full lg:hidden">
+                <div className="absolute z-20 bg-black w-full lg:hidden">
                     <div className="flex justify-left items-left flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {/* routes */}
                         {renderRoutes()}
                         {/*  */}
                         {rightMenu()}
-                    
+
                     </div>
                 </div>
             )}
