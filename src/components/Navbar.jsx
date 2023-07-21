@@ -42,7 +42,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="bg-transparent mb-7">
+        <nav className="bg-transparent mb-7 relative">
             <div className="flex items-center justify-between lg:justify-left h-16">
 
                 <div className="h-6 w-auto flex items-center">
