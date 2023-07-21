@@ -19,7 +19,7 @@ const Hero = () => {
                 <p className="text-center md:text-left">
                     Our vision is to revolutionize the way brands and advertisers target, reach
                 </p>
-                <div className='gradient w-full sm:w-3/4 h-[1px] my-8'></div>
+                <div className='gradient w-full sm:w-3/4 md:w-full h-[1px] my-8'></div>
                 <Button gradientOutline rounded='full' onClick={()=>navigate('/users')}>
                     Get Started <FontAwesomeIcon className='ml-3' icon={faArrowRightLong} beat /> 
                 </Button>
