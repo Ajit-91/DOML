@@ -2,8 +2,11 @@ import React from 'react'
 
 const Loading = () => {
     return (
-        <div className="absolute flex justify-center items-center h-screen relative">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#5200FF]"></div>
+        <div className="relative flex justify-center items-center h-screen relative">
+            <div className='gradient h-24 w-24 rounded-full py-[3px] absolute left-1/2  -translate-x-2/4 -translate-y-2/4'>
+
+            <div className="animate-spin bg-black rounded-full h-full w-full"></div>
+            </div>
         </div>
     )
 }

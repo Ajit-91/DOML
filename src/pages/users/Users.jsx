@@ -24,7 +24,7 @@ export default () => {
             
             {users.length === 0 ? <Loading /> : (
                 <>
-                    <h1 className='text-2xl font-semibold mb-[90px] text-center '>Users</h1>
+                    <h1 className='text-2xl font-semibold mb-[90px] text-center uppercase  '>Users</h1>
                     <div className='grid justify-items-center grid-cols-1 md:justify-items-stretch md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-[150px]'>
                         {users?.map((user, index) => (
                             <UserCard key={index} user={user} />
